@@ -1,4 +1,4 @@
-from ctypes import windll
+
 from os import system
 from queue import Queue
 from random import choices, choice
@@ -58,7 +58,6 @@ class Main:
 /    |    \  ||  |  |  | \(  <_> )     \ 
 \____|__  /__||__|  |__|   \____/___/\  \\
         \/                            \_/\n'''
-        windll.kernel32.SetConsoleTitleW(f'NitroX-{self.version} | by ShadowOxygen')
         self.hits = 0
         self.checked = 0
         self.cpm = 0
@@ -153,11 +152,6 @@ class Main:
         while True:
             if self.checked == 0:
                 continue
-            windll.kernel32.SetConsoleTitleW(
-                f'NitroX-{self.version} | Hits: {self.hits}'
-                f' | Checked: {self.checked}'
-                f' | Chance: {self.hits}/{self.checked}'
-                f' | CPM {self.cpm}')
 
     def refresh_api_link(self):
         while True:
