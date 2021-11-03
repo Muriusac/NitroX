@@ -65,32 +65,6 @@ class Main:
         self.prints = Queue()
         self.header = {'Pragma': 'no-cache',
                        'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36'}
-        if Checker.version_check:
-            try:
-                gitversion = str(
-                    get(url="https://raw.githubusercontent.com/ShadowOxygen/NitroX/master/version").text)
-                if f'{self.version}\n' != gitversion:
-                    print(tite)
-                    print(f"{Fore.LIGHTRED_EX}Your version is outdated.")
-                    print(
-                        f"Your version: {self.version}\nLatest version: {gitversion}\nGet latest version in the link below")
-                    print(
-                        f"https://github.com/ShadowOxygen/NitroX/releases\nStarting in 5 seconds...{Fore.LIGHTCYAN_EX}")
-                    sleep(5)
-                    system('cls')
-            except Exception as e:
-                if Checker.debug:
-                    print(f'\nError for updating checking:\n {e}\n')
-                pass
-        try:
-            self.announcement = get(
-                url='https://raw.githubusercontent.com/ShadowOxygen/NitroX/master/announcement').text
-        except Exception as e:
-            if Checker.debug:
-                print(f'{Fore.LIGHTRED_EX}Error with announcement: {e}')
-            self.announcement = ''
-            pass
-        print(tite)
         if not Checker.Proxy.proxy_use_api:
             while True:
                 try:
